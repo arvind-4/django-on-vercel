@@ -1,11 +1,8 @@
 bin/
 lib/
-
+.venv/
 __pycache__/
-
 *.env
-
 venv/
-
 *.sqlite3
 staticfiles_build/
