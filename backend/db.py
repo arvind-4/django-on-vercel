@@ -10,7 +10,7 @@ BASE_DIR = getattr(settings, 'BASE_DIR')
 
 DATABASES = {}
 
-if (not constants.USE_POSTGRES) or constants.DJANGO_DEBUG:
+if constants.DJANGO_DEBUG:
     DATABASES = {
         "default": {
             "ENGINE": "django.db.backends.sqlite3",
