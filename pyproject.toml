@@ -1,8 +1,9 @@
 [project]
 name = "django-on-vercel"
 version = "0.1.0"
+author = "Arvind A"
+email = "pingarvindforquestions@gmail.com"
 description = "A django app on vercel using postgres db"
-authors = ["Arvind <pingarvindforquestions@gmail.com>"]
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
@@ -16,4 +17,5 @@ dependencies = [
 [dependency-groups]
 dev = [
     "gunicorn>=23.0.0",
+    "ruff>=0.11.5",
 ]
