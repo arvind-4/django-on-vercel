@@ -1,52 +1,62 @@
 # Django on Vercel
 
-A Simple Starter Template which helps to Deploy a **Django Project on Vercel** as a **Serverless Function** .
+A simple starter template to **deploy a Django project on Vercel** as a **serverless function**.
 
-This App is Configured with Postgres as the Choice of Database.
+This app is pre-configured to use **PostgreSQL** as the database. It also includes:
 
-- [x] Configured with Static Files in Production.
-- [x] Compatable with Postgres/MySQL DB.
+- ✅ Static file support for production
+- ✅ Compatibility with PostgreSQL and MySQL
 
-```sh
-ls
-	build.sh            # Build Script for Vercel
-	manage.py  
-	poetry.lock  	    # Lock All Dependency
-	pyproject.toml      # Package Manager
-	pyvenv.cfg  
-	README.md  
-	requirements.txt    # Python Requirements
-	static  			# Add Your Static (Empty on Purpose)
-	templates  			# Django Templates
-	backend  			# Django Project Root
-	vercel.json			# Vercel Configuration
+## Requirements
+
+- Python 3.12 or above
+- Git
+- [uv](https://github.com/astral-sh/uv) (optional, for fast dependency management)
+
+## Getting Started (Local Development)
+
+### 1. Clone the Repository
+
+```bash
+mkdir -p ~/Dev/django-vercel
+cd ~/Dev/django-vercel
+git clone https://github.com/arvind-4/django-on-vercel.git .
 ```
 
-## Get & Running on your Local Machine
+### 2. Create a Virtual Environment
 
-- Clone the **Repo**
-```sh
-cd ~/Dev/
-mkdir django_vercel
-cd django_vercel
-git clone https://github.com/Arvind-4/Django-with-Vercel.git .
+#### Option A: Using [uv](https://github.com/astral-sh/uv)
+
+```bash
+uv venv
+uv sync
 ```
-- Create a **Virtual Environment** for **Python**
-	- using **Poetry**
-	```python
-	virtualenv --python=python3.9 .
-	source bin/activate
-	poetry install
-	```
-	- using **Virtualenv**
-	```python
-	virtualenv --python=python3.9 .
-	source bin/activate
-	pip install -r requirements.txt
-	```
-	
-- Run Locally
-```python
-cd ~/Dev/django_vercel
+
+#### Option B: Using `venv` and `pip`
+
+```bash
+python3.12 -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt -r requirements-dev.txt
+```
+
+### 3. Set Up Environment Variables
+
+```bash
+cp .env.sample .env
+```
+
+> Make sure to update `.env` with your actual credentials and settings.
+
+### 4. Run the Server Locally
+
+```bash
 python manage.py runserver
 ```
+
+---
+
+## Notes
+
+- This setup is optimized for deployment on **Vercel** as a serverless backend.
+- Ensure your database settings in `.env` are correctly configured before deploying.
